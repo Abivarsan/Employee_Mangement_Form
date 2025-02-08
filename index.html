@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagero Employee Management System</title>
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts for Enhanced Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+          integrity="sha512-Fo3rlrZj/k7ujTTXRN6u1KkFb1CqF3uLk0jcz1G1HwB03ZRmgKkz5ab0LybVd5+1vXc/JUW4eS7Lv9LDm9bEow==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- intl-tel-input CSS for Telephone Input with Country Flags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    
+    <!-- intl-tel-input JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+</head>
+<body>
+    <!-- Skeleton Loader -->
+    <div id="skeleton-loader" class="skeleton-loader active">
+        <div class="skeleton-header"></div>
+        <div class="skeleton-content">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-form">
+                <div class="skeleton-input"></div>
+                <div class="skeleton-input"></div>
+                <div class="skeleton-input"></div>
+                <div class="skeleton-input"></div>
+                <div class="skeleton-input"></div>
+                <div class="skeleton-input"></div>
+                <div class="skeleton-button"></div>
+            </div>
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>👋 Welcome to Pagero Employee Management System</h1>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#form">Employee Form</a></li>
+            <li><a href="#details">Employee Data</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section-background">
+            <p>Streamlining operations and enhancing employee management through innovative solutions.</p>
+        </section>
+
+        <!-- Employee Form Section -->
+        <section id="form" class="section-background">
+            <h2>Employee Details Form</h2>
+            <form id="employeeForm" novalidate>
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="name">Full Name<span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <small class="error-message"></small>
+                </div>
+
+                <!-- Telephone Number Field with Country Code Selector -->
+                <div class="form-group">
+                    <label for="telephone">Telephone Number<span class="required">*</span></label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <!-- Email Address Field -->
+                <div class="form-group">
+                    <label for="email">Email Address<span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <!-- Date of Birth Field -->
+                <div class="form-group">
+                    <label for="dob">Date of Birth<span class="required">*</span></label>
+                    <input type="date" id="dob" name="dob" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <!-- Position Field -->
+                <div class="form-group">
+                    <label for="position">Position<span class="required">*</span></label>
+                    <input type="text" id="position" name="position" required placeholder="Software Engineer">
+                    <small class="error-message"></small>
+                </div>
+
+                <!-- Department Field -->
+                <div class="form-group">
+                    <label for="department">Department<span class="required">*</span></label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="HR Department">HR Department</option>
+                        <option value="Admin Department">Admin Department</option>
+                        <option value="Developers">Developers</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+
+                <!-- Start Date Field -->
+                <div class="form-group">
+                    <label for="startDate">Start Date<span class="required">*</span></label>
+                    <input type="date" id="startDate" name="startDate" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+        </section>
+
+        <!-- Details Section -->
+
+        <section id="details" class="section-background">
+            <h2>Employee Data</h2>
+            <div class="table-responsive"> <!-- Responsive container -->
+                <table id="detailsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Telephone Number</th>
+                            <th>Email Address</th>
+                            <th>Date of Birth</th>
+                            <th>Position</th>
+                            <th>Department</th>
+                            <th>Start Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Bottom Boxes Section -->
+        <section class="bottom-boxes">
+            <!-- About Pagero Box -->
+            <div class="box" id="about">
+                <h3>About Pagero</h3>
+                <p>Learn more about Pagero's mission, vision, and the innovative solutions we provide to enhance employee management.</p>
+                <a href="#about" class="btn">Read More</a>
+            </div>
+            
+            <!-- Contact Us Box -->
+            <div class="box" id="contact">
+                <h3>Contact Us</h3>
+                <p>Have questions or need support? Get in touch with our team through email or phone.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+            
+            <!-- Follow Us Box -->
+            <div class="box">
+                <h3>Follow Us</h3>
+                <p>Stay updated with the latest news and updates from Pagero by following us on social media.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/pagero" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/pagero" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/pagero" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/pagero" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Pagero. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to External JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        const form = document.getElementById('employeeForm');
+        const detailsTableBody = document.getElementById('detailsTable').querySelector('tbody');
+        let employees = []; // Array to hold employee data
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Gather form data
+            const formData = new FormData(form);
+            const employee = {
+                name: formData.get('name'),
+                telephone: formData.get('telephone'),
+                email: formData.get('email'),
+                dob: formData.get('dob'),
+                position: formData.get('position'),
+                department: formData.get('department'),
+                startDate: formData.get('startDate'),
+            };
+
+            // Add employee to array and update table
+            employees.push(employee);
+            updateDetailsTable();
+
+            // Clear the form fields
+            form.reset();
+        });
+
+        function updateDetailsTable() {
+            detailsTableBody.innerHTML = ''; // Clear existing rows
+
+            employees.forEach(employee => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${employee.name}</td>
+                    <td>${employee.telephone}</td>
+                    <td>${employee.email}</td>
+                    <td>${employee.dob}</td>
+                    <td>${employee.position}</td>
+                    <td>${employee.department}</td>
+                    <td>${employee.startDate}</td>
+                `;
+                detailsTableBody.appendChild(row);
+            });
+        }
+
+        // Initialize the telephone input with country flags
+        const input = document.querySelector("#telephone");
+        const iti = window.intlTelInput(input, {
+            initialCountry: "us",
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+        });
+    </script>
+</body>
+</html>
